@@ -28,12 +28,12 @@ You should be familiar with the git command line basics:
 
 == Class Repositories
 
-=== The Home Depot Workshop Repository
+=== Workshop Repository
 
 Clone this repository so that you have access to the presentations.
 PDF copies are included in the same directory as each Keynote.
 
 [source,bash]
 ----
-$ git clone https://github.com/krujos/pcf-workshop/
+$ git clone https://github.com/cdelashmutt-pivotal/pcf-workshop/
 ----
