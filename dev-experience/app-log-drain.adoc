@@ -12,7 +12,7 @@ In this section, you will configure application log draining into a log analysis
 
 . Sign up for a free Papertrail account: https://papertrailapp.com/
 
-. We've got some instructions set up Papertrail: http://docs.run.pivotal.io/devguide/services/log-management-thirdparty-svc.html#papertrail. There so-so and on Josh's list of things to improve. 
+. We've got some instructions set up Papertrail: http://docs.run.pivotal.io/devguide/services/log-management-thirdparty-svc.html#papertrail.
 
 . In a nubshell
 .. Create a Papertrail account, fill in your email and whatnot.

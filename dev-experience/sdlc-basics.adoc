@@ -65,7 +65,7 @@ $ cf target -s development
 .. hint `cf push --no-start` can make the push bind restage process a bit less cumbersome. 
 
 . Did it work?  Why not?
-.. Think back to what Josh said in link:../operations/README.adoc[the operations section] about what I provisioned for you. Basically, there's a firewall that's preventing you from connecting to the production database. 
+.. Think back to the link:../operations/README.adoc[the operations section] about what was provisioned for you. Basically, there's a firewall that's preventing you from connecting to the production database. 
 
 .. This is a good time to read about link:http://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html[Application Security Groups]. 
 
@@ -85,7 +85,7 @@ It looks like we need to modify our security group to allow egress.  But how do 
 
 . QUESTION: What variable shows your mysql service instance?
 
-. At this point, holler at Josh and I'll change the security group. 
+. At this point, ask your instructor and they will change the security group. 
 
 .. You can now bind your service, but you're not seeing data from the production instance, you have you're own separate copy. 
 
