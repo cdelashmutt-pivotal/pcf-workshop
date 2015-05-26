@@ -14,8 +14,8 @@ Before we do anything lets take a look at the developer console and confirm inst
 
 * login to the console at https://console.run.pcf.jkruckcloud.com
 * I am using a self signed cert, go through that little dance in your browser. 
-* If you're using chrome, make sure it's a recent. Folks from THD have had some issues with an older version 
-* Login with your THD email and a password of `password`
+* If you're using chrome, make sure it's a recent version.
+* Login with your instructor provided username and a password of `password`
 * Navigate to "Tools" (Left side)
 * Download and install the CLI for your platform.
 
