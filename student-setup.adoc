@@ -26,6 +26,12 @@ You should be familiar with the git command line basics:
 * git push - push committed changes to the remote repo
 * git status - show status of local changes
 
+== Papertrail
+Papertail is a cloud based log aggregation service.  Sign up for a free account at https://papertrailapp.com/
+
+== AppDynamics
+AppDynamics provides cloud based application performance management and monitoring.  Sign up for a free account at https://portal.appdynamics.com/account/signup/signupForm
+
 == Class Repositories
 
 === Workshop Repository
