@@ -12,19 +12,17 @@ Before we do anything lets take a look at the developer console and confirm inst
 
 * link:http://docs.pivotal.io/pivotalcf/console/dev-console.html[User Console Docs]
 
-* login to the console at https://console.run.pcf.jkruckcloud.com
-* I am using a self signed cert, go through that little dance in your browser. 
+* login to the console at https://console.run.pivotal.io
 * If you're using chrome, make sure it's a recent version.
-* Login with your instructor provided username and a password of `password`
 * Navigate to "Tools" (Left side)
-* Download and install the CLI for your platform.
+* Download and install the CLI for your platform, if you haven't already.
 
 === CLI
 Now that we have the CLI, lets push some basic applications quickly and navigate our way around the CLI. 
 
 * Login to Cloud Foundry
 
-`cf login -a https://api.run.pcf.jkruckcloud.com -u <your email> -p password -o <your org> -s development --skip-ssl-validation` 
+`cf login -a https://api.run.pivotal.io -u <your email> -p password -o <your org> -s development` 
 
 . `-a` is the api we're targeting. Meaning all actions we perform will take place on this Cloud Foundry Foundation (deployment)
 
@@ -35,8 +33,6 @@ Now that we have the CLI, lets push some basic applications quickly and navigate
 . `-o` is the name of your organization
 
 . `-s` is the name of your space
-
-. `--skip-ssl-validation` lets the CLI use a self signed cert.
 
 === Pushing apps
 * **Make sure you're logged into your development space (run `cf target` to check)**
