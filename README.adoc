@@ -14,9 +14,9 @@
 
 . link:dev-experience/README.adoc[The Developer Experience]
 
-. link:buildpack/README.adoc[Customizing Build Packs]
-
 . link:service-broker/README.adoc[Deploying a Custom Service Broker]
+
+. link:buildpack/README.adoc[Customizing Build Packs]
 
 == Material Format Philosophy
 

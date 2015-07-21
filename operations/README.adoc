@@ -28,4 +28,3 @@ We will cover these briefly and *experience* them later.
 . link:http://docs.pivotal.io/pivotalcf/concepts/roles.html[Orgs, Spaces, Roles, and Permissions]
 
 . link:http://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html[Application Security Groups]
-
