@@ -20,7 +20,7 @@ Spring Boot Version 1.2.3
 * Web
 
 . Click the *Generate Project* button. Your browser will download a zip file.
-Unpack that zip file at `$COURSE_HOME/day_01/session_01/lab_01/initial`.
+Unpack that zip file into a directory that you wish to work from.
 
 . Import the project's `pom.xml` into your editor/IDE of choice.
 
@@ -36,5 +36,9 @@ public String hello() {
 }
 ----
 
+. Build the project with `mvn package`
+
+. Test out the project locally with `java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar`
+
 *Congratulations!*
-You've just completed your first Spring Boot application.
+You've just completed your first Spring Boot application.  Push it to your PCF development space to test it out in Cloud Foundry.
