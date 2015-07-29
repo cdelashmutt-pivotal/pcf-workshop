@@ -4,14 +4,14 @@ Docs:
 	Spring Cloud: http://projects.spring.io/spring-cloud/spring-cloud.html
 	Netflix Hysterix (circuit breaker): https://github.com/Netflix/Hystrix/wiki/Configuration
 	
- Get latest version of Fortune Teller app from github
-git clone https://github.com/spring-cloud-samples/fortune-teller
-Review the annotations in the code that enable Spring Cloud and Netflix OSS
-Line 14 of FortuneService.java found in fortune-ui
-Line 6 of bootstrap.yml found in fortune-ui
-Lines 9 & 10 of Application.java in fortune-ui
-Follow instructions in the readme with one exception
-Modify the contents of “manifest-pcf.yml” and add the random host generator attribute.
+1. Get latest version of Fortune Teller app from github
+	git clone https://github.com/spring-cloud-samples/fortune-teller
+2. Review the annotations in the code that enable Spring Cloud and Netflix OSS
+	Line 14 of FortuneService.java found in fortune-ui
+	Line 6 of bootstrap.yml found in fortune-ui
+	Lines 9 & 10 of Application.java in fortune-ui
+3. Follow instructions in the readme with one exception
+	Modify the contents of “manifest-pcf.yml” and add the random host generator attribute.
 
 For example:
 
@@ -36,10 +36,11 @@ applications:
   - circuit-breaker
 
 
-3.  Once the ui and service apps are running, try the web interface a few times by hitting the generated URL.  See Apps manager console for the URL
+4.  Once the ui and service apps are running, try the web interface a few times by hitting the generated URL.  See Apps manager console for the URL
 
-4.  Now stop the backend fortune service and hit the UI URL again.   Note the fortune behavior
-5.  Fork the config repo into your own github repository
-
+5.  Now stop the backend fortune service and hit the UI URL again.   Note the fortune behavior
+6.  Fork the config repo into your own github repository
+7.  Modify one of the Hysterix properties to change the behaviour of the service call inside the UI app
+	Example: 
 
 
