@@ -16,7 +16,7 @@
 
 . link:service-broker/README.adoc[Deploying a Custom Service Broker]
 
-. link:cloudnative-springboot/cloudnative-springboot.adoc[Intro Microservices with Spring Boot]
+. link:cloudnative-springboot/cloudnative-springboot.adoc[Intro to Cloud Native Apps with Spring Boot]
 
 . link:buildpack/README.adoc[Customizing Build Packs]
 
