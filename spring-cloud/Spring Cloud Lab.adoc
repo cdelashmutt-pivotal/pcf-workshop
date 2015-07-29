@@ -1,0 +1,45 @@
+Pre-reqs:  Access to a PCF env where Spring Cloud Services are installed, Github account, Maven on laptop, your favorite Java/Spring IDE.
+
+Docs:
+	Spring Cloud: http://projects.spring.io/spring-cloud/spring-cloud.html
+	Netflix Hysterix (circuit breaker): https://github.com/Netflix/Hystrix/wiki/Configuration
+	
+ Get latest version of Fortune Teller app from github
+git clone https://github.com/spring-cloud-samples/fortune-teller
+Review the annotations in the code that enable Spring Cloud and Netflix OSS
+Line 14 of FortuneService.java found in fortune-ui
+Line 6 of bootstrap.yml found in fortune-ui
+Lines 9 & 10 of Application.java in fortune-ui
+Follow instructions in the readme with one exception
+Modify the contents of “manifest-pcf.yml” and add the random host generator attribute.
+
+For example:
+
+instances: 1
+memory: 512M
+applications:
+- name: fortune-service
+  random-route: true
+  path: fortune-teller-fortune-service/target/fortune-teller-fortune-service-0.0.1-SNAPSHOT.jar
+  services:
+  - fortune-db
+  - config-server
+  - service-registry
+  env:
+      SPRING_PROFILES_ACTIVE: pcf
+- name: fortune-ui
+  random-route: true
+  path: fortune-teller-ui/target/fortune-teller-ui-0.0.1-SNAPSHOT.jar
+  services:
+  - config-server
+  - service-registry
+  - circuit-breaker
+
+
+3.  Once the ui and service apps are running, try the web interface a few times by hitting the generated URL.  See Apps manager console for the URL
+
+4.  Now stop the backend fortune service and hit the UI URL again.   Note the fortune behavior
+5.  Fork the config repo into your own github repository
+
+
+
