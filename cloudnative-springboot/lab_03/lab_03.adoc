@@ -2,13 +2,7 @@
 
 == Refactoring to Externalize the Config
 
-. Change to the lab directory:
-+
-----
-$ cd $COURSE_HOME/day_01/session_01/lab_03/initial/hello-spring-boot
-----
-
-. Import the project's `pom.xml` into your editor/IDE of choice.
+. In the directory you extracted your "Hello World" project to:
 
 . Rename `src/main/resources/application.properties` to `src/main/resources/application.yml`. Into that file, paste the following:
 +
@@ -38,10 +32,10 @@ $ mvn package
 . Run the application:
 +
 ----
-$ java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
+$ java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 ----
 
-. Visit the application in the browser (http://localhost:8080), and verify that the output is still the following:
+. Visit the application in the browser (http://localhost:8095), and verify that the output is still the following:
 +
 ----
 Hello World!
@@ -54,10 +48,10 @@ Hello World!
 . Run the application again, this time setting the `GREETING` environment variable:
 +
 ----
-$ GREETING=Ohai java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
+$ GREETING=Ohai java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 ----
 
-. Visit the application in the browser (http://localhost:8080), and verify that the output has changed to the following:
+. Visit the application in the browser (http://localhost:8095), and verify that the output has changed to the following:
 +
 ----
 Ohai World!
@@ -89,10 +83,10 @@ $ mvn package
 . Run the application, this time setting the `SPRING_PROFILES_ACTIVE` environment variable:
 +
 ----
-$ SPRING_PROFILES_ACTIVE=spanish java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
+$ SPRING_PROFILES_ACTIVE=spanish java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 ----
 
-. Visit the application in the browser (http://localhost:8080), and verify that the output has changed to the following:
+. Visit the application in the browser (http://localhost:8095), and verify that the output has changed to the following:
 +
 ----
 Hola World!
@@ -105,10 +99,10 @@ Hola World!
 . Run the application, this time setting both the `SPRING_PROFILES_ACTIVE` and `GREETING` environment variables:
 +
 ----
-$ SPRING_PROFILES_ACTIVE=spanish GREETING=Ohai java -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
+$ SPRING_PROFILES_ACTIVE=spanish GREETING=Ohai java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar
 ----
 
-. Visit the application in the browser (http://localhost:8080), and verify that the output has changed to the following:
+. Visit the application in the browser (http://localhost:8095), and verify that the output has changed to the following:
 +
 ----
 Ohai World!

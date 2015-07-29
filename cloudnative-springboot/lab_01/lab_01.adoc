@@ -38,7 +38,9 @@ public String hello() {
 
 . Build the project with `mvn package`
 
-. Test out the project locally with `java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar`
+. Run the project locally with `java -Dserver.port=8095 -jar target/hello-spring-boot-0.0.1-SNAPSHOT.jar`
+
+. Browse to http://localhost:8095 to see your "Hello World!" message in all it's glory.
 
 *Congratulations!*
 You've just completed your first Spring Boot application.  Push it to your PCF development space to test it out in Cloud Foundry.
