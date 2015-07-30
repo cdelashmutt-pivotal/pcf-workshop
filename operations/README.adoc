@@ -4,7 +4,7 @@ During this workshop your instructors have assumed the role of Platform Operator
 
 An organization is the unit of tenancy in Cloud Foundry. Within an organization there are spaces. Spaces are used to group applications and services. Spaces are generally created according to a projects SDLC or build pipeline. Spaces are free form and we believe development teams should organize them in whatever way suits their needs and objectives. 
 
-Each student has been provided an organization that follows the naming pattern <first_initial><last_initial>-org. So Josh's would be `jk-org`. 
+Each student has been provided an organization that follows the naming pattern <email-address-before-at-sign>-org. So jkruck@pivotal.io would be `jkruck-org`. 
 
 You've also been provided a user account. Please login to the platform using your email address (all lower case) and the password 'password'. Follow the prompts, and select the 'production' space. 
 
