@@ -4,5 +4,40 @@
 
 Cloud Foundry has some services for auto scaling applications. These serve as a starting point and may work for some of your application portfolio. Read about them link:http://docs.pivotal.io/pivotalcf/autoscaling[on pivotal site].
 
+== Push autoscale-demo app
+. First, build the autoscale project or grab the binary by doing one of the following:
+.. Clone the repository at link:https://github.com/cdelashmutt-pivotal/autoscale-demo, and build the project with a `mvn package` 
+.. Download the autoscale-demo JAR from link:https://drive.google.com/file/d/0By9lG8Y1Ud2kQ0V2a3d6cGQxd0U/view?usp=sharing
 
-Due to time constraints we won't be performing auto scaler setup in the workshop, but we can discuss it if theres desire. 
+. Now push the built application binary to CF (replace <your-initials> with your own initials, and <path> with the path to the autoscale-demo-1.0-SNAPSHOT.jar).
++
+[source,bash]
+----
+$ cf push autoscale-demo-<your-initials> -p <path>
+----
+
+== Create Autoscaling Service
+. If necessary, review the docs on Services:
++
+* link:http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html[Managing Services]
++
+
+. Create an App Autoscaler service instance from the market place using the "Gold" plan.  Bind this service to your autoscale-demo app
+
+. Launch the App Autoscaler console via the `Manage` link in the Users Console.  
+
+. You should see your application in the App Autoscale console, but it will be paused for autoscaling.  Click the "Turn on" button to allow configuration of the App Autoscaler for your app.
+
+== Configure Autoscaling Service
+. Set the Instances to min of 1 and max of 2.  Set the low CPU Threshold to 5% and the high to 15%.
+
+. Click the save button.
+
+== Request application URL
+. In your browser, make a request to the URL that was bound to your application.
+
+== Monitor app in console
+. Back in the CF Web Console of via the CLI, monitor your application.  You should see the number of instances for your app go to 2.  Then, after the request you made to your app completes (2-3 minutes), you should see your application scaled back down to one instance.
+
+== Extra
+Try setting up a scheduled scale up and scale down for you application.  Refer to the manual pages at the beginning of this doc to figure out how.
