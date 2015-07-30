@@ -13,7 +13,7 @@ Cloud Foundry has some services for auto scaling applications. These serve as a 
 +
 [source,bash]
 ----
-$ cf push autoscale-demo-<your-initials> -p <path>
+$ cf push autoscale-demo-<your-initials> -p <path> --no-manifest
 ----
 
 == Create Autoscaling Service
