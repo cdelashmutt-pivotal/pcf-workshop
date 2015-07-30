@@ -2,15 +2,6 @@
 
 The following resources are required for the class. If you want a copy of the materials from this course you need to clone the repo, otherwise you can skip this. 
 
-== Pivotal Web Services account
-You can sign up for a free account at link:http://run.pivotal.io[run.pivotal.io]
-
-After signing in, please download and install the CF CLI that is appropriate for your machine.  The signup page will tell you where to go after you create your account.
-
-== github account
-
-For the continuous delivery exercise you need a github account. If you don't have one find a few moments to create one please. 
-
 == Git Client
 This class requires you to have git client software installed.  If you don't already have git installed, a nice GUI interface is link:http://www.sourcetreeapp.com/[SourceTree], which is available for both Mac OSX and Windows.  Otherwise you can use the following command-line utilities:
 

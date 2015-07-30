@@ -12,7 +12,7 @@ Before we do anything lets take a look at the developer console and confirm inst
 
 * link:http://docs.pivotal.io/pivotalcf/console/dev-console.html[User Console Docs]
 
-* login to the console at https://console.run.pivotal.io
+* login to the console at https://console.south.fe.pivotal.io
 * If you're using chrome, make sure it's a recent version.
 * Navigate to "Tools" (Left side)
 * Download and install the CLI for your platform, if you haven't already.
@@ -22,7 +22,7 @@ Now that we have the CLI, lets push some basic applications quickly and navigate
 
 * Login to Cloud Foundry
 
-`cf login -a https://api.run.pivotal.io -u <your email> -p password -o <your org> -s development` 
+`cf login -a https://api.south.fe.pivotal.io -u <your email> -p password -o <your org> -s development` 
 
 . `-a` is the api we're targeting. Meaning all actions we perform will take place on this Cloud Foundry Foundation (deployment)
 
@@ -67,7 +67,7 @@ Read link:https://github.com/krujos/cf-hello-world-sample-apps/blob/master/READM
 === Applications on Pivotal CF
 
 * Lets talk about about cloud ready apps and what cloud native means.
-** link:https://github.com/krujos/pcf-workshop/blob/pro/dev-experience/Cloud_Ready_Apps.key[Cloud Ready Apps]
+** link:https://github.com/krujos/pcf-workshop/blob/pro/dev-experience/Cloud_Ready_Apps.pdf[Cloud Ready Apps]
 
 * Review the documentation on link:http://docs.pivotal.io/pivotalcf/devguide/deploy-apps/prepare-to-deploy.html[Considerations for Designing and Running an Application in the Cloud]
 
