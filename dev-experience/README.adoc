@@ -86,8 +86,6 @@ The following exercises should be completed for `cities-service`.
 
 * link:user-console.adoc[User Console]
 
-*End of Day 1*
-
 * link:app-log-drain.adoc[Application Log Draining]
 
 * link:apm.adoc[Monitoring with APM tools]
