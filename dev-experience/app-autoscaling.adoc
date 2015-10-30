@@ -9,35 +9,61 @@ Cloud Foundry has some services for auto scaling applications. These serve as a 
 .. Clone the repository at link:https://github.com/cdelashmutt-pivotal/autoscale-demo, and build the project with a `mvn package` 
 .. Download the autoscale-demo JAR from link:https://drive.google.com/file/d/0By9lG8Y1Ud2kQ0V2a3d6cGQxd0U/view?usp=sharing
 
-. Now push the built application binary to CF (replace <your-initials> with your own initials, and <path> with the path to the autoscale-demo-1.0-SNAPSHOT.jar).
+Try following the directions above for your app.
+
+A good start for load testing is jMeter. You can download that link:http://jmeter.apache.org/download_jmeter.cgi[here]. jMeter requires you have a JDK installed!
+
+== Goal
+
+In this section you will leverage Pivotal's Autoscaling Service to scale your microservice.
+
+== Exercise
+
+=== Configuring Autoscaling
+
+. Using Apps Manager, create a new instance of the Autoscaler from the Marketplace.
++
+* Be sure to name your service instance: <first-initial><last-initial>-cities-service-autoscaler
+* Be sure to select the Gold plan
+* Bind this instance to your cities-service
+
+. Follow the instructions on link:http://docs.pivotal.io/pivotalcf/autoscaling[Autoscaling] to configure and enable your autoscaling service.
+
+. Launch the autoscaling dashboard for your service.
+
+
+=== Set memory to ensure scaling will happen
+
+Be sure to set the memory allocation for your application to 650M to ensure the application will scale.
+
+
+=== Generating Load and Observing Results
+
+. link:http://jmeter.apache.org/download_jmeter.cgi[Apache JMeter] Can be used to generate load.
+
+. Use the following link:https://raw.githubusercontent.com/krujos/pcf-workshop/master/dev-experience/cities-load-generator.jmx[JMeter script] as a starting point. Thanks link:https://github.com/gtantachuco-pivotal[Guillermo Tantachuco]!!!
+
+. Open the 'cities-load-generator.jmx' in the JMeter GUI.
+
+. Expand the content of the JMeter test plan by: i) selecting the 'Load Generator' test plan on the left pane; and, ii) going to the menu: 'Option -> Expand All'
+
+. Edit the test plan to use your application's URL. To do so, change the 'Server Name or IP' field on the 'HTTP Request Defaults' item.
+
+. Save the test plan: 'File -> Save'
+
+. Run the test plan: 'Run -> Start'
+
+. Use both the developer console and the auto-scale console to observe your service scale up and back down based on load. [Optional] See app metrics on the App Dynamics' console.
+
+. Stop the test plan: 'Run -> Stop'
+
+== Checking your work
+
+. An autoscaling service instance should show correctly under the VCAP_SERVICES environment variable.
 +
 [source,bash]
 ----
-$ cf push autoscale-demo-<your-initials> -p <path> --no-manifest
+$ cf env <first-inital><last-initial>-cities-service
 ----
 
-== Create Autoscaling Service
-. If necessary, review the docs on Services:
-+
-* link:http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html[Managing Services]
-+
-
-. Create an App Autoscaler service instance from the market place using the "Gold" plan.  Bind this service to your autoscale-demo app
-
-. Launch the App Autoscaler console via the `Manage` link in the Users Console.  
-
-. You should see your application in the App Autoscale console, but it will be paused for autoscaling.  Click the "Turn on" button to allow configuration of the App Autoscaler for your app.
-
-== Configure Autoscaling Service
-. Set the Instances to min of 1 and max of 2.  Set the low CPU Threshold to 5% and the high to 15%.
-
-. Click the save button.
-
-== Request application URL
-. In your browser, make a request to the URL that was bound to your application.
-
-== Monitor app in console
-. Back in the CF Web Console of via the CLI, monitor your application.  You should see the number of instances for your app go to 2.  Then, after the request you made to your app completes (2-3 minutes), you should see your application scaled back down to one instance.
-
-== Extra
-Try setting up a scheduled scale up and scale down for you application.  Refer to the manual pages at the beginning of this doc to figure out how.
+. Your app should scale up when the jmeter script is executed and back down after the script completes.

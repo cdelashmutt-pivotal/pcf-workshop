@@ -8,42 +8,50 @@ To deploy and configure an application, leverage the platform for monitoring & m
 
 === Console
 
-Before we do anything lets take a look at the developer console and confirm install of the Cloud Foundry CLI on our laptops/desktops. 
+Before we do anything lets take a look at the developer console and confirm install of the Cloud Foundry CLI on our laptops/desktops.
 
 * link:http://docs.pivotal.io/pivotalcf/console/dev-console.html[User Console Docs]
 
 * login to the console at https://console.south.fe.pivotal.io
 * If you're using chrome, make sure it's a recent version.
+* If you see errors about the site using self signed certs, please proceed through the warnings in your browser.
+* Login with your work email address (all lowercase) and a password of `password`
 * Navigate to "Tools" (Left side)
 * Download and install the CLI for your platform, if you haven't already.
 
 === CLI
-Now that we have the CLI, lets push some basic applications quickly and navigate our way around the CLI. 
+Now that we have the CLI, lets push some basic applications and learn to navigate the CLI.
 
 * Login to Cloud Foundry
 
 `cf login -a https://api.south.fe.pivotal.io -u <your email> -p password -o <your org> -s development` 
 
+.. Note if you had SSL errors above, make sure to add `--skip-ssl-validation` to the end of the above command.
+
 . `-a` is the api we're targeting. Meaning all actions we perform will take place on this Cloud Foundry Foundation (deployment)
 
 . `-u` is your username, in this workshop it's your email address.
 
-. `-p` is your password. I've set it to `password`
+. `-p` is your password. It should be your PR AMER password
 
 . `-o` is the name of your organization
 
 . `-s` is the name of your space
 
+. `--skip-ssl-validation` lets the CLI use a self signed cert (or a cert where the names don't match up).
+
+.. This command is interactive, you don't have to type your password on the command line...
+
 === Pushing apps
-* **Make sure you're logged into your development space (run `cf target` to check)**
+* **Make sure you have targeted your development space (run `cf target` to check)**
 
 * Clone our example applications
 
 `git clone https://github.com/krujos/cf-hello-world-sample-apps`
 
-`cd cf-hello-world-sample-apps`
+`cd cf-hello-world-sample-apps/<pick a language>`
 
-* No git? link:https://s3-us-west-1.amazonaws.com/pcf-icm/demo-apps.zip[No problem, download the apps here.]
+* **No git on your laptop? link:https://s3-us-west-1.amazonaws.com/pcf-icm/demo-apps.zip[No problem, download the apps here.]**
 
 Read link:https://github.com/krujos/cf-hello-world-sample-apps/blob/master/README.md[`README.md`] and push some apps!!
 
@@ -52,17 +60,17 @@ Read link:https://github.com/krujos/cf-hello-world-sample-apps/blob/master/READM
 == More talking
 
 * Review the Keynote on link:Cloud_Ready_Apps.key[Cloud_Ready_Apps Ready Apps]
-** This should drive home how to build applications that will run on PCF. As we'll cover PCF can work with lots of applications, but cloud native is the best fit. 
+** This should drive home how to build applications that will run well on PCF. As we'll cover PCF can work with lots of applications, but cloud native is the best fit.
 
 == More Exercises
 
-* We're going to switch to a java application called `cities-service`. We will use this application for the remainder of the workshop. Find and download the cities jars at the following location. 
+* We're going to switch to a java application called `cities-service`. We will use this application for the remainder of the workshop. Find and download the cities jars at the following location.
 
 ** https://s3-us-west-1.amazonaws.com/pcf-icm/cities-service.jar
 
-** You can also find the code in this repository link:cities/[in dev-experience/cities]. We've made some changes to the code in the jar referenced above to force a failure early on. If you choose to compile and run the code yourself please remove the `hsqldb` dependency from the build file. Please note there is not time in the class to troubleshoot build issues, so if you experience problems please use the jar above. 
+** You can also find the code in this repository link:cities/[in dev-experience/cities]. We've made some changes to the code in the jar referenced above to force a failure early on. If you choose to compile and run the code yourself please remove the `hsqldb` dependency from the build file. Please note there is not time in the class to troubleshoot build issues, so if you experience problems please use the jar above.
 
-* Take a quick look at the link:cities/README.adoc[architecture] of the cities application. 
+* Take a quick look at the link:cities/README.adoc[architecture] of the cities application.
 
 === Applications on Pivotal CF
 

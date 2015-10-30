@@ -39,3 +39,5 @@ PDF copies are included in the same directory as each Keynote.
 ----
 $ git clone https://github.com/cdelashmutt-pivotal/pcf-workshop/
 ----
+
+The rest of the class will walk you through installing the CF CLI. Ensure that you have sufficient rights to install software to your laptop.
