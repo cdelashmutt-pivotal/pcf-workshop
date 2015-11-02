@@ -32,7 +32,7 @@ Now that we have the CLI, lets push some basic applications and learn to navigat
 
 . `-u` is your username, in this workshop it's your email address.
 
-. `-p` is your password. It should be your PR AMER password
+. `-p` is your password. It should be "password"
 
 . `-o` is the name of your organization
 
