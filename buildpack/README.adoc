@@ -39,21 +39,6 @@ Application was staged at: null
   -----> Downloaded app buildpack cache (44M)
   -----> Java Buildpack Version: e89e546 | https://github.com/krujos/java-buildpack#e89e546
 
-. Check the staging info provided by the Java build pack to see that our change was effective:
-+
-[source,bash]
-----
-$ cf files <cities-service> staging_info.yml
-
----
-buildpack_path: /var/vcap/data/dea_next/admin_buildpacks/16b81d79-2a6a-426a-8cff-6daf779eadad_93ad9995be0bd22935c4590c6986061bbb0e9c0d
-detected_buildpack: java-buildpack=158e5a6-https://github.com/cloudfoundry/java-buildpack.git#158e5a6
-  java-main open-jdk-jre=1.7.0_55 spring-auto-reconfiguration=1.2.0_RELEASE staging-timestamp
-start_command: SERVER_PORT=$PORT $PWD/.java-buildpack/open_jdk_jre/bin/java -cp $PWD/.:$PWD/.java-buildpack/spring_auto_reconfiguration/spring_auto_reconfiguration-1.2.0_RELEASE.jar
-  -Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh
-  -Xmx382293K -Xms382293K -XX:MaxPermSize=64M -XX:PermSize=64M -Xss995K -Dstaging.timestamp='2014-05-27
-  15:52:41 +0000' org.springframework.boot.loader.JarLauncher
-----
 +
 As you can see from the output, our timestamp was added as the final +-D+ argument in the +start_command+.
 
